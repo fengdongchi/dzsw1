@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dzsw:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="dzsw-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="dzsw:war exploded" />
+    </root>
+  </artifact>
+</component>
