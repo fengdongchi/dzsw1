@@ -1,0 +1,342 @@
+{"node": {
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 15,
+                        "menuName": "人事管理",
+                        "module": "Operpage",
+                        "parentId": 8,
+                        "sortId": 7,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "renshi",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 16,
+                        "menuName": "供应商管理",
+                        "module": "Supplierpage",
+                        "parentId": 8,
+                        "sortId": 8,
+                        "src": "images\/2.jpg",
+                        "state": true,
+                        "tag": "gongyingshang",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 17,
+                        "menuName": "库存信息管理",
+                        "module": "StockInfo",
+                        "parentId": 8,
+                        "sortId": 9,
+                        "src": "images\/3.jpg",
+                        "state": true,
+                        "tag": "kucunxinxi",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 30,
+                        "menuName": "操作员管理",
+                        "module": "Role",
+                        "parentId": 8,
+                        "sortId": 22,
+                        "src": "images\/4.jpg",
+                        "state": true,
+                        "tag": "caozuoyuanguanli",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 8,
+                "menuName": "基础操作",
+                "module": null,
+                "parentId": null,
+                "sortId": 1,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 18,
+                        "menuName": "入库信息添加",
+                        "module": "instockinsert",
+                        "parentId": 9,
+                        "sortId": 10,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "rukutianjia",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 19,
+                        "menuName": "入库信息操作",
+                        "module": "instockselect",
+                        "parentId": 9,
+                        "sortId": 11,
+                        "src": "images\/2.jpg",
+                        "state": true,
+                        "tag": "rukucaozuo",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 9,
+                "menuName": "入库管理",
+                "module": null,
+                "parentId": null,
+                "sortId": 2,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 20,
+                        "menuName": "出库信息添加",
+                        "module": "outstockinsert",
+                        "parentId": 10,
+                        "sortId": 12,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "chukutianjia",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 21,
+                        "menuName": "出库信息操作",
+                        "module": "outstockselect",
+                        "parentId": 10,
+                        "sortId": 13,
+                        "src": "images\/2.jpg",
+                        "state": true,
+                        "tag": "chukucaozuo",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 10,
+                "menuName": "出库管理",
+                "module": null,
+                "parentId": null,
+                "sortId": 3,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 22,
+                        "menuName": "订单信息添加",
+                        "module": "OrderInfoinsert",
+                        "parentId": 11,
+                        "sortId": 14,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "dingdantianjia",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 23,
+                        "menuName": "订单信息操作",
+                        "module": "OrderInfoselect",
+                        "parentId": 11,
+                        "sortId": 15,
+                        "src": "images\/2.jpg",
+                        "state": true,
+                        "tag": "dingdancaozuo",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 24,
+                        "menuName": "订单配货商",
+                        "module": "DeliveryInfo",
+                        "parentId": 11,
+                        "sortId": 16,
+                        "src": "images\/3.jpg",
+                        "state": true,
+                        "tag": "dingdanpeihuo",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 11,
+                "menuName": "订单管理",
+                "module": null,
+                "parentId": null,
+                "sortId": 4,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 25,
+                        "menuName": "商品类别字典",
+                        "module": "MerchandiseCInfo",
+                        "parentId": 12,
+                        "sortId": 17,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "shangpinleibie",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 26,
+                        "menuName": "商品促销状态",
+                        "module": "ProStatusInfo",
+                        "parentId": 12,
+                        "sortId": 18,
+                        "src": "images\/2.jpg",
+                        "state": true,
+                        "tag": "shangpincuxiao",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 27,
+                        "menuName": "商品单位字典",
+                        "module": "UnitInfo",
+                        "parentId": 12,
+                        "sortId": 19,
+                        "src": "images\/3.jpg",
+                        "state": true,
+                        "tag": "shangpindanwei",
+                        "url": null
+                    }
+                },
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 28,
+                        "menuName": "商品信息管理",
+                        "module": "MerchandiseInfo",
+                        "parentId": 12,
+                        "sortId": 20,
+                        "src": "images\/4.jpg",
+                        "state": true,
+                        "tag": "shangpinxinxi",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 12,
+                "menuName": "商品管理",
+                "module": null,
+                "parentId": null,
+                "sortId": 5,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "leaf": true,
+                    "menu": {
+                        "menuId": 29,
+                        "menuName": "会员信息管理",
+                        "module": "MemberInfo",
+                        "parentId": 13,
+                        "sortId": 21,
+                        "src": "images\/1.jpg",
+                        "state": true,
+                        "tag": "huiyuanxinxi",
+                        "url": null
+                    }
+                }
+            ],
+            "leaf": false,
+            "menu": {
+                "menuId": 13,
+                "menuName": "会员管理",
+                "module": null,
+                "parentId": null,
+                "sortId": 6,
+                "src": null,
+                "state": true,
+                "tag": null,
+                "url": null
+            }
+        }
+    ],
+    "leaf": false,
+    "menu": null
+}}

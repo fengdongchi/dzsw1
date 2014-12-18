@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2481574247">
+    <data-source source="LOCAL" name="SQL Server - Dzsw@localhost" uuid="2d54b226-7c7a-4a64-b551-6d1a681a730c">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;databaseName=Dzsw</jdbc-url>
+      <user-name>sa</user-name>
+      <user-password>dfd9dfc2dfc3dfc4dfc5dfdd</user-password>
+      <schema-pattern>Dzsw.*</schema-pattern>
+      <default-schemas>Dzsw.*</default-schemas>
+      <libraries>
+        <library>
+          <url>file://E:/sqljdbc4.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

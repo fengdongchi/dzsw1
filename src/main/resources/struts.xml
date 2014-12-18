@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+
+
+
+
+    <package name="jsoninter" extends="struts-default,json-default" abstract="true">
+        <interceptors>
+            <interceptor-stack name="mystack">
+                <interceptor-ref name="json"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="mystack"></default-interceptor-ref>
+    </package>
+
+
+
+
+
+
+
+
+    <package name="default" extends="jsoninter" namespace="/">
+
+        <!--菜单-->
+        <action name="MenuInfo" class="com.shinowit.action.MenulistInfopageAction" method="select">
+            <result type="json">
+
+                <param name="excludeProperties">
+
+                    menulist.*.hibernateLazyInitializer,
+                    menulist.*.handler
+                    <!--
+                    menulist.*.TAuRoleInfoByRoleId,
+                    menulist.*.TBaLogInfosByMenuId,
+                    menulist.*.TAuAuthorizationsByMenuId,
+                    menulist.*.TAuMenuInfo.TAuMenuInfoByMenuId
+
+                                      menulist.*.TAuMenuInfoByMenuId.TAuMenuChildInfosByMenuId.*.TAuMenuInfoByMenuId, -->
+
+                    <!--menulist.*.TAuMenuChildInfosByMenuId,-->
+                    <!--menulist.*.TBaLogInfosByMenuId,-->
+                    <!--menulist.*.TAuAuthorizationsByMenuId,-->
+                    <!--menulist.*.TAuMenuChildInfosByMenuId-->
+                </param>
+            </result>
+        </action>
+
+
+
+
+        <!--登陆-->
+        <action name="login" class="com.shinowit.action.loginAction" method="login">
+            <result type="json">
+                <param name="excludeProperties">
+                    list.*.hibernateLazyInitializer,
+                    list.*.handler,
+                    list.*.TAuRoleInfoByRoleId,
+                    list.*.TBaLogInfosByOperId,
+                    list.*.TMeInStockInfosByOperId,
+                    list.*.TMeOrderInfosByOperId,
+                    list.*.TMeOutStockInfosByOperId
+                </param>
+            </result>
+        </action>
+
+
+
+        <!--操作员-->
+        <action name="Operpage" class="com.shinowit.action.OperpageAction" method="Operlist">
+            <result type="json">
+                <!--  <param name="root">operlist</param>  -->
+                <!--<param name="includeProperties">operlist.*</param>-->
+                <!--下面这样 分也会正常！ 按裴老师的分页会只显示一页！-->
+                <param name="excludeProperties">
+                    operlist.*.hibernateLazyInitializer,operlist.*.handler,
+                    operlist.*.TAuAuthorizationsByRoleId,
+                    operlist.*.TAuOperInfosByRoleId,
+                    operlist.*.TBaLogInfosByOperId,
+                    operlist.*.TMeInStockInfosByOperId,
+                    operlist.*.TMeOrderInfosByOperId,
+                    operlist.*.TMeOutStockInfosByOperId
+                </param>
+            </result>
+        </action>
+        <action name="insertaction" class="com.shinowit.action.MenuInfoAction" method="insert">
+        <result type="json"></result>
+        </action>
+        <action name="deleteaction" class="com.shinowit.action.MenuInfoAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction" class="com.shinowit.action.MenuInfoAction" method="update">
+            <result type="json"></result>
+        </action>
+
+        <!--角色查询-->
+
+        <action name="role" class="com.shinowit.action.RoleInfoselectAction" method="select">
+            <result type="json">
+                <param name="json">
+                    rolelist.*.hibernateLazyInitializer,
+                    rolelist.*.handler,
+                    <!--rolelist.*.TAuAuthorizationsByRoleId,-->
+                    <!--rolelist.*.TAuOperInfosByRoleId-->
+                </param>
+            </result>
+        </action>
+
+
+        <!--供应商-->
+        <action name="Supplierpage" class="com.shinowit.action.SupplierpageAction" method="Supplierlist">
+            <result type="json">
+                <!--<param name="includeProperties">supplist.*</param>-->
+                <param name="excludeProperties">
+                    supplist.*.hibernateLazyInitializer,supplist.*.handler,
+                    supplist.*.TMeInStockInfosBySupplierId
+                </param>
+            </result>
+        </action>
+        <action name="insertaction1" class="com.shinowit.action.SupplierAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction1" class="com.shinowit.action.SupplierAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction1" class="com.shinowit.action.SupplierAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+        <!--商品类别-->
+        <action name="MerchandiseCInfo" class="com.shinowit.action.MerchandiseCInfopageAction" method="Mcdlist">
+            <result type="json">
+                <!--<param name="includeProperties">mcdlist.*</param>-->
+                <param name="excludeProperties">
+                    mcdlist.*.hibernateLazyInitializer,
+                    mcdlist.*.handler,
+                    mcdlist.*.TMeMerchandiseInfosByMerchandiseCid
+                </param>
+            </result>
+        </action>
+        <action name="insertaction2" class="com.shinowit.action.MerchandiseCInfoAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction2" class="com.shinowit.action.MerchandiseCInfoAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction2" class="com.shinowit.action.MerchandiseCInfoAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+         <!--商品促销状态-->
+        <action name="ProStatusInfo" class="com.shinowit.action.ProStatusInfopageAction" method="select">
+            <result type="json">
+                <!--<param name="includeProperties">proslist.*</param>-->
+                <param name="excludeProperties">
+                    proslist.*.hibernateLazyInitializer,
+                    proslist.*.handler,
+                    proslist.*.TMeMerchandiseInfosByProStatusId
+                </param>
+            </result>
+        </action>
+        <action name="insertaction3" class="com.shinowit.action.ProStatusInfoAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction3" class="com.shinowit.action.ProStatusInfoAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction3" class="com.shinowit.action.ProStatusInfoAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+        <!--商品单位-->
+        <action name="UnitInfo" class="com.shinowit.action.UnitInfoselectAction" method="select">
+            <result type="json">
+                <!--下面这样 分也会正常！ 按裴老师的分页会只显示一页！-->
+                <param name="excludeProperties">
+                    unitlist.*.hibernateLazyInitializer,unitlist.*.handler,
+                    unitlist.*.TMeMerchandiseInfosByUnitId,
+                    unitlist.*.TMeOrderDetailsInfosByUnitId
+                </param>
+            </result>
+        </action>
+        <action name="insertaction4" class="com.shinowit.action.UnitInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction4" class="com.shinowit.action.UnitInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction4" class="com.shinowit.action.UnitInfoupdateAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+        <!--商品信息-->
+        <action name="MerchandiseInfo" class="com.shinowit.action.MerchandiseInfoselectAction" method="select">
+            <result type="json">
+                <!--<param name="includeProperties">chanlist.*</param>-->
+                <param name="excludeProperties">
+                    chanlist.*.hibernateLazyInitializer,
+                    chanlist.*.handler,
+                    chanlist.*.TMeInStockDetailsInfosByMerchandiseId,
+                    chanlist.*.TMeOrderDetailsInfosByMerchandiseId,
+                    chanlist.*.TMeOutStockDetailsInfosByMerchandiseId,
+                    chanlist.*.TMeStockInfosByMerchandiseId
+                </param>
+            </result>
+        </action>
+        <action name="insertaction5" class="com.shinowit.action.MerchandiseInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction5" class="com.shinowit.action.MerchandiseInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction5" class="com.shinowit.action.MerchandiseInfoupdateAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+        <!--库存信息-->
+        <action name="StockInfo" class="com.shinowit.action.StockInfoselectAction" method="select">
+            <result type="json">
+                <!--<param name="includeProperties">stocklist.*</param>-->
+                <param name="excludeProperties">
+
+                    stocklist.*.hibernateLazyInitializer,
+                    stocklist.*.handler,
+                    stocklist.*.TMeInStockDetailsInfosByMerchandiseId,
+                    stocklist.*.TMeMerchandiseCInfoByMerchandiseCid,
+                    stocklist.*.TMeProStatusInfoByProStatusId,
+                    stocklist.*.TMeUnitInfoByUnitId,
+                    stocklist.*.TMeOrderDetailsInfosByMerchandiseId,
+                    stocklist.*.TMeOutStockDetailsInfosByMerchandiseId,
+                    stocklist.*.TMeStockInfosByMerchandiseId
+                </param>
+        </result>
+        </action>
+        <action name="insertaction6" class="com.shinowit.action.StockInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction6" class="com.shinowit.action.StockInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction6" class="com.shinowit.action.StockInfoupdateAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+
+
+        <!--入库信息-->
+        <action name="InstockInfoinsert" class="com.shinowit.action.InstockInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="InstockInfoselect" class="com.shinowit.action.InstockInfoselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    instocklist.*.hibernateLazyInitializer,
+                    instocklist.*.handler,
+                    instocklist.*.TMeInStockDetailsInfosByBillCode,
+                    instocklist.*.TAuRoleInfoByRoleId,
+                    instocklist.*.TBaLogInfosByOperId,
+                    instocklist.*.TMeInStockInfosByOperId,
+                    instocklist.*.TMeOrderInfosByOperId,
+                    instocklist.*.TMeOutStockInfosByOperId,
+                    instocklist.*.TMeInStockInfosBySupplierId
+                </param>
+            </result>
+        </action>
+
+
+
+        <!--入库明细信息的操作-->
+        <action name="InstockdetailInfoselect" class="com.shinowit.action.InstockdetailInfoAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    stockdetaillist.*.hibernateLazyInitializer,
+                    stockdetaillist.*.handler,
+                    stockdetaillist.*.TMeInStockDetailsInfosByBillCode,
+                    stockdetaillist.*.TAuOperInfoByOperId,
+                    stockdetaillist.*.TBaSupplierInfoBySupplierId,
+                    stockdetaillist.*.TMeInStockDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeMerchandiseCInfoByMerchandiseCid,
+                    stockdetaillist.*.TMeProStatusInfoByProStatusId,
+                    stockdetaillist.*.TMeUnitInfoByUnitId,
+                    stockdetaillist.*.TMeOrderDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeOutStockDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeStockInfosByMerchandiseId
+                </param>
+            </result>
+        </action>
+
+        <!--入库信息的操作-->
+        <action name="instockdetaildelete" class="com.shinowit.action.InstockInfodeleteAction" method="delete">
+            <result type="json">
+            </result>
+        </action>
+
+
+
+        <action name="instockdetaildelete1" class="com.shinowit.action.InstockdetaildeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+
+        <action name="instockdetailselect2" class="com.shinowit.action.instockdetailselectAction" method="select">
+            <result type="json"></result>
+        </action>
+
+
+
+        <!--出库信息-->
+        <action name="OutstockInfoinsert" class="com.shinowit.action.OutstockInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="OutstockInfoselect" class="com.shinowit.action.OutstockInfoselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    outstocklist.*.hibernateLazyInitializer,
+                    outstocklist.*.handler,
+                    outstocklist.*.TMeOrderInfosByOutBillCode,
+                    outstocklist.*.TMeOutStockDetailsInfosByOutBillCode,
+                    outstocklist.*.TAuRoleInfoByRoleId,
+                    outstocklist.*.TBaLogInfosByOperId,
+                    outstocklist.*.TMeInStockInfosByOperId,
+                    outstocklist.*.TMeOrderInfosByOperId,
+                    outstocklist.*.TMeOutStockInfosByOperId
+                </param>
+            </result>
+        </action>
+
+        <action name="outstockdetailInfoselect" class="com.shinowit.action.OutstockdetailInfoAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    stockdetaillist.*.hibernateLazyInitializer,
+                    stockdetaillist.*.handler,
+                    stockdetaillist.*.TMeInStockDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeMerchandiseCInfoByMerchandiseCid,
+                    stockdetaillist.*.TMeProStatusInfoByProStatusId,
+                    stockdetaillist.*.TMeUnitInfoByUnitId,
+                    stockdetaillist.*.TMeOrderDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeOutStockDetailsInfosByMerchandiseId,
+                    stockdetaillist.*.TMeStockInfosByMerchandiseId,
+                    stockdetaillist.*.TMeOrderInfosByOutBillCode,
+                    stockdetaillist.*.TMeOutStockDetailsInfosByOutBillCode,
+                    stockdetaillist.*.TAuOperInfoByOperId
+                </param>
+            </result>
+        </action>
+        <action name="outstockdetaildelete" class="com.shinowit.action.OutstockInfodeleteAction" method="delete">
+            <result type="json">
+            </result>
+        </action>
+
+
+
+        <action name="outstockdetaildelete1" class="com.shinowit.action.OutstockdetaildeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+
+        <action name="outstockdetailselect2" class="com.shinowit.action.outstockdetailselectAction" method="select">
+            <result type="json"></result>
+        </action>
+
+
+
+        <!--配送商-->
+        <action name="TBaDeliveryInfo" class="com.shinowit.action.DeliveryInfoselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    deliverylist.*.hibernateLazyInitializer,
+                    deliverylist.*.handler,
+                    deliverylist.*.TMeOrderInfosByDeliveryId,
+                </param>
+            </result>
+        </action>
+        <action name="insertaction7" class="com.shinowit.action.DeliveryInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction7" class="com.shinowit.action.DeliveryInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction7" class="com.shinowit.action.DeliveryInfoupdateAction" method="update">
+        <result type="json"></result>
+    </action>
+
+
+        <!--会员信息-->
+        <action name="TBaMemberInfo" class="com.shinowit.action.MemberInfoselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    memberlist.*.hibernateLazyInitializer,
+                    memberlist.*.handler,
+                    memberlist.*.TBaMembeAddrInfosByUserName,
+                    memberlist.*.TBaSupplyRecordInfosByUserName
+                    memberlist.*.TMeOrderInfosByUserName
+                </param>
+            </result>
+        </action>
+        <action name="insertaction8" class="com.shinowit.action.MemberInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction8" class="com.shinowit.action.MemberInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction8" class="com.shinowit.action.MemberInfoupdateAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+        <!--收货地址-->
+        <action name="TBaMembeAddrInfo" class="com.shinowit.action.MembeAddrInfoselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    memaddlist.*.hibernateLazyInitializer,
+                    memaddlist.*.handler,
+                    memaddlist.*.TBaMembeAddrInfosByUserName,
+                    memaddlist.*.TBaSupplyRecordInfosByUserName
+                    memaddlist.*.TMeOrderInfosByUserName
+                </param>
+            </result>
+        </action>
+        <action name="insertaction9" class="com.shinowit.action.MembeAddrInfoinsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="deleteaction9" class="com.shinowit.action.MembeAddrInfodeleteAction" method="delete">
+            <result type="json"></result>
+        </action>
+        <action name="updateaction9" class="com.shinowit.action.MembeAddrInfoupdateAction" method="update">
+            <result type="json"></result>
+        </action>
+<!--大饼-->
+
+        <action name="pieselect" class="com.shinowit.action.pieselectAction" method="select">
+            <result type="json">
+                <param name="excludeProperties">
+                    list.*.hibernateLazyInitializer,
+                    list.*.handler,
+                    list.*.TMeMerchandiseCInfoByMerchandiseCid,
+                    list.*.TMeProStatusInfoByProStatusId,
+                    list.*.TMeUnitInfoByUnitId,
+                    list.*.TMeMerchandiseInfoByMerchandiseId
+                </param>
+            </result>
+        </action>
+
+        <!--视图来进行查询-->
+        <action name="viewpie" class="com.shinowit.action.ViewPieAction" method="viewpie">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="tree" class="com.shinowit.action.QuanXianAction" method="quanxianselect">
+            <result type="json"></result>
+        </action>
+
+
+        <action name="opernametree" class="com.shinowit.action.selecttreeAction" method="selecttree">
+            <result type="json">
+                <param name="includeProperties">node.*</param>
+            </result>
+        </action>
+
+        <action name="opernametree1" class="com.shinowit.action.QuanXianSelectAction" method="quanxianselect">
+            <result type="json"></result>
+        </action>
+
+
+
+
+        <action name="role_auth" class="com.shinowit.action.RoleInsertAction" method="insert">
+            <result type="json"></result>
+        </action>
+        <action name="role_auth_update" class="com.shinowit.action.RoleUpdateAction" method="update">
+            <result type="json"></result>
+        </action>
+
+
+
+    </package>
+
+</struts>

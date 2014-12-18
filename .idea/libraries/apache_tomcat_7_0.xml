@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="apache-tomcat-7.0">
+    <CLASSES>
+      <root url="file://D:/java/apache-tomcat-7.0.54" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/java/apache-tomcat-7.0.54/webapps/docs/appdev/sample/src" />
+      <root url="file://D:/java/apache-tomcat-7.0.54/webapps/examples/jsp/plugin/applet" />
+      <root url="file://D:/java/apache-tomcat-7.0.54/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file://D:/java/apache-tomcat-7.0.54/webapps/examples/WEB-INF/classes" />
+    </SOURCES>
+  </library>
+</component>
